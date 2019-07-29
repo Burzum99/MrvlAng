@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{ data.comic.title }}</h1>
+<div mat-dialog-content>
+    <div fxLayout fxLayoutAlign="center" >
+        <img src="{{ data.comic.thumbnail.path }}/portrait_incredible.{{ data.comic.thumbnail.extension }}">
+        <h4 style="margin-left: 25px;">{{ data.comic.description }}</h4>
+    </div>
+</div>
+<div mat-dialog-actions>
+
+  <button mat-button *ngIf="data.isInFavorites == false" (click)="addtoFavorites(data)">Add to favorites</button>
+  <button mat-button *ngIf="data.isInFavorites == true" (click)="removeFromFavorites(data.comic)">Remove from favorites</button>
+  <button mat-button (click)="onNoClick()">Ok</button>
+</div>

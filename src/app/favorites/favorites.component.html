@@ -1,0 +1,18 @@
+<mat-sidenav [(opened)]="opened" opened mode="side" position="end" class="siderbar-container">
+  <div class="favorites-container">
+      <div *ngFor="let comic of favoriteComics" class="favorite-comic" >
+          <div mat-dialog-content>
+              <div fxLayout fxLayoutAlign="center" >
+                  <img src="{{ comic.thumbnail.path }}/portrait_fantastic.{{ comic.thumbnail.extension }}">
+              </div>
+              <div>
+                <p>{{ (comic.title.length>20)? (comic.title | slice:0:19)+'..':(comic.title) }}
+                    <button mat-icon-button (click)="deleteComic(comic)">
+                        <mat-icon>delete_outline</mat-icon>
+                    </button>
+                </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</mat-sidenav>

@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-container navbar-fixed-top fixed-top">
+  <div class="container nav-container">
+    <div class="row">
+      <div class="col">
+        <p class="navbar-brand app-name">MARVEL</p>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="search-container">
+        <form [formGroup]="formGroup" (ngSubmit)="searchHero(formGroup.value)">
+          <mat-form-field class="full-width">
+            <input class="search-input" matInput formControlName="searchedValue" placeholder="Search a character"
+              value="">
+          </mat-form-field>
+          <button mat-raised-button class="search-button" color="warn" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-1 order-options-container">
+      <mat-form-field>
+        <mat-label>Order By</mat-label>
+        <mat-select (selectionChange)="orderResults($event)">
+          <mat-option *ngFor="let orderCriteria of orderOptions" [value]="orderCriteria.orderUrlParameter">
+            {{ orderCriteria.orderType }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</nav>
+<div>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav-content>
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="search-suggestions-container" *ngIf="results.length !== 0 && results !== undefined">
+            <div *ngFor="let character of results.data.results | slice:0:7; let i = index"
+              class="suggested-item-container">
+              <img class="suggested-item-image" src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}"
+                alt="" width="50" height="50">
+              <a class="suggestion-character-text" [routerLink]="['/character', character.id]">{{ character.name }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="favorite-button-container" fxLayout="row" fxLayoutAlign="start start"  >
+          <button (click)="sidenavtoggle()"> <img style="width: 25px;height: 25px;" src="https://www.searchpng.com/wp-content/uploads/2019/02/favorite-icon-715x715.png"/></button>
+      </div>
+      <div class="content-container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%"
+        fxLayoutAlign="center">
+
+        <app-loader></app-loader>
+        <div fxFlex="35%" *ngFor="let character of characters ">
+          <mat-card class="card">
+            <mat-card-header>
+              <div mat-card-avatar
+                [ngStyle]="{ 'background-image': 'url(' + character.thumbnail.path + '/portrait_small.' + character.thumbnail.extension+ ')'}">
+              </div>
+              <mat-card-title>{{ character.name }}</mat-card-title>
+              <mat-card-subtitle>{{ character.modified }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}"
+              alt="Photo of {{ character.name }}">
+            <mat-card-content>
+              <p>{{ character.description }}</p>
+              <div>
+                <mat-nav-list>
+                  <h3>Related comics:</h3>
+                  <mat-list-item *ngFor="let comic of character.comics | slice:0:4; let i = index">
+                    <img matListAvatar src="{{ comic.thumbnail.path}}.{{ comic.thumbnail.extension}}">
+                    <h3 matLine> {{ comic.title }} </h3>
+                    <p matLine>
+                      <span> {{ comic.description }} </span>
+                    </p>
+                    <button mat-icon-button (click)="showInfo(comic)">
+                      <mat-icon>launch</mat-icon>
+                    </button>
+                  </mat-list-item>
+                </mat-nav-list>
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>
+                <a [routerLink]="['/character', character.id]">See more
+                </a>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <app-favorites [opened]="showSidebar" ></app-favorites>
+        <mat-paginator class="paginator" #paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex"
+          [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = getHeroes($event)">
+        </mat-paginator>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

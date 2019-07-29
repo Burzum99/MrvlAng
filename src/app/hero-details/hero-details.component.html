@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-container navbar-fixed-top fixed-top">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="navbar-brand app-name">MARVEL</p>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="content-container" fxLayout="row">
+  <div style="position: fixed;
+  width: 100%;
+  z-index: 10;">
+    <img src="{{ character.thumbnail.path  }}/detail.{{ character.thumbnail.extension }}">
+  </div>
+  <div class="lists-container">
+    <mat-nav-list>
+      <h2 class="character-title">{{ character.name }}</h2>
+      <p class="character-description"> {{ character.description }} </p>
+      <h3>Related comics:</h3>
+      <div class="comic-container" *ngFor="let comic of character.comics" fxLayout="row">
+        <img src="{{ comic.thumbnail.path  }}/portrait_fantastic.{{ comic.thumbnail.extension }}">
+        <div class="info-container">
+          <h4> {{ comic.title }} </h4>
+          <p> {{ comic.description }} </p>
+        </div>
+      </div>
+    </mat-nav-list>
+  </div>
+</div>

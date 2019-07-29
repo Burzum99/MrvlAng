@@ -1,0 +1,138 @@
+
+.character-detail-link {
+  color: black;
+}
+
+.filter-select-list img {
+  margin-right: 30px;
+}
+
+.suggestion-character-text {
+  color: black;
+  margin-left: 5px;
+}
+
+.search-suggestions-container {
+  position: fixed;
+  z-index: 2;
+  background-color: white;
+  padding: 8px;
+  border-radius: 10px;
+  margin-top: 53px;
+}
+
+.suggested-item-image {
+  border-radius: 50%;
+}
+
+p.app-name {
+  color: white;
+  margin-left: 8px;
+  font-family: "Marvel";
+  font-size: 55px;
+  background: red;
+  padding: 7px 5px 0px 5px;
+  margin-top: 59px;
+  margin-right: 1rem;
+  line-height: 3rem;
+  margin-bottom: 3.8rem;
+}
+
+
+.toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+.card {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.paginator {
+  z-index: 2;
+  flex: 100%;
+  margin-top: 100px;
+}
+
+.content-container {
+   margin-top: 70px;
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+.example-is-mobile .sidenav-container {
+  flex: 1 0 auto;
+}
+
+.navbar-container {
+  height: 53px;
+}
+
+.search-container {
+  display: contents;
+}
+
+.suggested-item-container {
+  margin-top: 10px;
+}
+
+
+.search-button{
+  margin-left: 20px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: gainsboro !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  background-color: gainsboro !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+ background-color: gainsboro !important;
+}
+
+::ng-deep.mat-form-field-infix {
+	margin-top: 16px !important;
+}
+
+::ng-deep.cdk-overlay-pane {
+  margin-top: 39px !important;
+}
+
+::ng-deep.mat-form-field-label{
+  color:gainsboro !important;
+}
+
+::ng-deep.search-input {
+  color:gainsboro !important;
+}
+
+::ng-deep.mat-select-placeholder
+ {
+  color:gainsboro !important;
+ }
+
+ ::ng-deep.mat-select-value-text {
+  color: gainsboro !important;
+}
+
+::ng-deep.mat-select-arrow {
+  color: gainsboro !important;
+}
+
+.nav-container {
+  height: 55px;
+}
+
+.order-options-container {
+  display: contents;
+  }
+
+  .favorite-button-container {
+    margin-top: 55px;
+  }

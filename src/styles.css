@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+.mat-toolbar.mat-primary {
+  background: #22262a;
+  color: #fff;
+}
+
+@font-face {
+  font-family: "Marvel";
+  src: url('/assets/Marvel-Regular.ttf') format('truetype'),
+}
+
+@font-face {
+  font-family: "Marat";
+  src: url('/assets/Marat-Sans-Regular.otf') format('opentype'),
+}

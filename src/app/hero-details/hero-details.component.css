@@ -1,0 +1,46 @@
+.character-description {
+  font-size: 22px;
+}
+
+.content-container {
+  margin-top: 35px;
+  margin-left: 18px;
+  margin-right: 35px;
+}
+
+.character-title {
+  font-size: 3rem;
+}
+
+p.app-name {
+  color: white;
+  margin-left: 8px;
+  font-family: "Marvel";
+  font-size: 55px;
+  background: red;
+  padding: 7px 5px 0px 5px;
+  margin-top: 59px;
+  margin-right: 1rem;
+  line-height: 3rem;
+  margin-bottom: 3.8rem;
+}
+
+.navbar-container {
+  height: 53px;
+}
+
+.content-container {
+  margin-top: 70px;
+}
+
+.lists-container {
+  margin-left: 560px;
+}
+
+.info-container {
+  margin-left: 5px;
+}
+
+.comic-container {
+  margin-top: 5px;
+}

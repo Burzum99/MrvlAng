@@ -1,0 +1,14 @@
+.favorites-container {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.favorite-comic {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.siderbar-container {
+  position: fixed;
+  margin-top: 53px;
+}
